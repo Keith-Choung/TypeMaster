@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import SplashPage from './components/splashPage/splash';
+import ResultsPage from './components/resultsPage/results';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      pageView: 0,
+      text: "Steve was born in Tokyo, Japan in 1950. He moved to London with his parents when he was 5 years old. Steve started school there and his father began work at the hospital. His mother was a house wife and he had four brothers. He lived in England for 2 years then moved to Amman, Jordan where he lived there for 10 years. Steve",
+    }
+  }
+
+  render() {
+    const { pageView, text } = this.state;
+
+    return (
+      <div className="main-body">
+        { !pageView ?
+          <SplashPage 
+            text = {text}
+          />
+        :
+          <ResultsPage />
+        }
+      </div>
+    )
+  }
 }
 
 export default App;

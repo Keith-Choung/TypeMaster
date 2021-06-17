@@ -1,0 +1,38 @@
+
+.text-box {
+  border: 2px solid #756C6C80;
+  line-height: 30px;
+  border-radius: 10px;
+  height: 150px;
+  padding: 10px;
+  color: #888888;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+.text-placeholder {
+  position: absolute;
+  width: 58%;
+  height: 150px;
+
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+.text-placeholder::after {
+  content: attr(data-placeholder);
+}
+
+.text-input {
+  color: #FFFFFF;
+  position: absolute;
+  width: 58%;
+  height: 150px;
+  outline-width: 0;
+}
+
+.text-box:focus {
+  outline-width: 0;
+  text-overflow: clip;
+  overflow: hidden;
+}
