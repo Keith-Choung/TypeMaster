@@ -9,7 +9,13 @@ class SplashPage extends Component {
     super(props);
     this.state = {
       text: props.text,
+      start: 0,
+      time: 60,
     }
+  }
+
+  onStart() {
+    console.log("START")
   }
 
   render() {

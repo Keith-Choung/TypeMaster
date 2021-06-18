@@ -10,6 +10,12 @@
   overflow: hidden;
 }
 
+.text-box:focus {
+  outline-width: 0;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
 .text-placeholder {
   position: absolute;
   width: 58%;
@@ -23,16 +29,31 @@
   content: attr(data-placeholder);
 }
 
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+}
+
 .text-input {
-  color: #FFFFFF;
+  color: transparent;
   position: absolute;
   width: 58%;
   height: 150px;
   outline-width: 0;
-}
-
-.text-box:focus {
-  outline-width: 0;
+  line-height: 30px;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 0px;
   text-overflow: clip;
   overflow: hidden;
+}
+
+.active {
+  color: #FFFFFF;
+}
+
+.error {
+  color: red;
 }
