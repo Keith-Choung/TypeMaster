@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TypeMaster/static/css/main.be289166.chunk.css",
-    "main.js": "/TypeMaster/static/js/main.2d2551b5.chunk.js",
-    "main.js.map": "/TypeMaster/static/js/main.2d2551b5.chunk.js.map",
+    "main.js": "/TypeMaster/static/js/main.135e9c6f.chunk.js",
+    "main.js.map": "/TypeMaster/static/js/main.135e9c6f.chunk.js.map",
     "runtime-main.js": "/TypeMaster/static/js/runtime-main.441e041e.js",
     "runtime-main.js.map": "/TypeMaster/static/js/runtime-main.441e041e.js.map",
     "static/js/2.88a0d5c6.chunk.js": "/TypeMaster/static/js/2.88a0d5c6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.441e041e.js",
     "static/js/2.88a0d5c6.chunk.js",
     "static/css/main.be289166.chunk.css",
-    "static/js/main.2d2551b5.chunk.js"
+    "static/js/main.135e9c6f.chunk.js"
   ]
 }
