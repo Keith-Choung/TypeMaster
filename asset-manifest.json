@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/TypeMaster/static/css/main.be289166.chunk.css",
-    "main.js": "/TypeMaster/static/js/main.135e9c6f.chunk.js",
-    "main.js.map": "/TypeMaster/static/js/main.135e9c6f.chunk.js.map",
+    "main.css": "/TypeMaster/static/css/main.acbf5cc8.chunk.css",
+    "main.js": "/TypeMaster/static/js/main.3625b611.chunk.js",
+    "main.js.map": "/TypeMaster/static/js/main.3625b611.chunk.js.map",
     "runtime-main.js": "/TypeMaster/static/js/runtime-main.441e041e.js",
     "runtime-main.js.map": "/TypeMaster/static/js/runtime-main.441e041e.js.map",
     "static/js/2.88a0d5c6.chunk.js": "/TypeMaster/static/js/2.88a0d5c6.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.af723dad.chunk.js": "/TypeMaster/static/js/3.af723dad.chunk.js",
     "static/js/3.af723dad.chunk.js.map": "/TypeMaster/static/js/3.af723dad.chunk.js.map",
     "index.html": "/TypeMaster/index.html",
-    "static/css/main.be289166.chunk.css.map": "/TypeMaster/static/css/main.be289166.chunk.css.map",
+    "static/css/main.acbf5cc8.chunk.css.map": "/TypeMaster/static/css/main.acbf5cc8.chunk.css.map",
     "static/js/2.88a0d5c6.chunk.js.LICENSE.txt": "/TypeMaster/static/js/2.88a0d5c6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.441e041e.js",
     "static/js/2.88a0d5c6.chunk.js",
-    "static/css/main.be289166.chunk.css",
-    "static/js/main.135e9c6f.chunk.js"
+    "static/css/main.acbf5cc8.chunk.css",
+    "static/js/main.3625b611.chunk.js"
   ]
 }
