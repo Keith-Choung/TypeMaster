@@ -4,6 +4,9 @@ Type Master was created using React. It boasts a built in stat tracker, timer an
 ### Instructions
 Click inside the input box and start typing.
 
+### Bugs
+Back spacing to the beginning takes out the first letter of the text, then backspacing after this restores that letter.
+
 ### TODO
 #### Priority 1
 - Implement spans for User Input to control letter coloring
