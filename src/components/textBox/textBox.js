@@ -14,11 +14,15 @@ class TextBox extends Component {
       start: false,
       newLineThresh: 0,
       wordCount: 0,
+      letterStyles: {},
+      userTextHTML: null,
       ...props
     }
 
     this.handleText = this.handleText.bind(this);
-    this.onDelete = this.onDelete.bind(this);
+    this.onKeyPress = this.onKeyPress.bind(this);
+    this.userInputToHTML = this.userInputToHTML.bind(this);
+    this.isCorrect = this.isCorrect.bind(this);
   }
 
   componentDidMount() {
@@ -30,17 +34,15 @@ class TextBox extends Component {
     })
   }
 
-  onDelete(e) {
+  onKeyPress(e) {
     const {text, textIndex, trackWords} = this.state;
-    console.log(textIndex);
+    // console.log(textIndex);
 
     if (e.keyCode === 32) {
-      console.log("new word");
       trackWords();
     }
 
     if (e.keyCode === 8) {
-      console.log("delete");
       if (textIndex - 1 <= 0) {
         this.setState(
           {
@@ -58,10 +60,9 @@ class TextBox extends Component {
   }
 
   handleText(e) {
-
     const {
-      text, newText, start, startTimer, lineIndex, 
-      newLineThresh, textIndex, divWidth, userInput
+      text, newText, start, startTimer, lineIndex, userInput, 
+      textIndex, letterStyles
     } = this.state;
   
     if (!start) {
@@ -72,46 +73,57 @@ class TextBox extends Component {
     this.setState(
       {
         userInput: e.target.value,
+        lineIndex: lineIndex + 1,
+        newText: newText.slice(1),
         textIndex: e.target.value.length,
-        lineIndex: lineIndex + 1
       });
 
-    
-    // Checks if new line is needed
-    // if (lineIndex > newLineThresh) {
-    //   console.log("THRESHOLD");
-    //   console.log(text.slice(textIndex, text.length));
-    //   this.setState({
-    //     lineIndex: 0,
-    //     newText: text.slice(textIndex, text.length),
-    //     userInput: ""
-    //   })
+    this.userInputToHTML(e.target.value);
+  }
 
-    // } else {
-    if (e.target.value[userInput.length] === text[userInput.length]) {
-      this.setState(
-        { 
-          newText: newText.slice(1),
-        }
-      )
+  isCorrect(input) {
+    const { text, newText, textIndex } = this.state;
+
+    console.log(textIndex, newText[textIndex], input[textIndex]);
+    if (text[textIndex] === input[textIndex]) {
+      return true;
     } else {
-      this.setState(
-        { 
-          newText: newText.slice(1),
-        }
-      )
+      return false;
     }
-    // }
+  }
 
+  userInputToHTML(input) {
+    const { textIndex, letterStyles } = this.state;
+
+    if (this.isCorrect(input)) {
+      letterStyles[textIndex] = "active";
+      this.setState({
+        letterStyles: letterStyles
+      });
+    } else {
+      letterStyles[textIndex] = "active-error";
+      this.setState({
+        letterStyles: letterStyles
+      });
+    }
+
+    let userInputArr = input.split("");
+
+    this.setState({
+      userTextHTML: userInputArr.map((letter, i) => {
+        return <span className={letterStyles[i]} key={i}>{letter}</span>
+      })
+    })
   }
 
   render() {
-    const { newText, userInput } = this.state;
+    const { newText, userInput, userTextHTML } = this.state;
 
     return (
       <div id="text-box" className="text-box">
         <div className="text-placeholder">
-          <span className="active">{userInput}</span>
+          { userTextHTML }
+          {/* <span className="active">{userInput}</span> */}
           <span className="passive">{newText}</span>
         </div>
         <textarea
@@ -119,7 +131,7 @@ class TextBox extends Component {
           className="text-input"
           onChange={this.handleText}
           value={userInput}
-          onKeyDown={this.onDelete}
+          onKeyDown={this.onKeyPress}
         />
       </div>
 
