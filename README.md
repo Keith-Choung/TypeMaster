@@ -9,11 +9,13 @@ Back spacing to the beginning takes out the first letter of the text, then backs
 
 ### TODO
 #### Priority 1
-- Implement spans for User Input to control letter coloring
-- New line after line is complete
+- Implement spans for User Input to control letter coloring √
+- New line after line is complete 
+- Allow spans to store spaces
 
 #### Priority 2
-- Spell checker
+- Spell checker √
+- Correct word counter
 - GET Request for random text blurbs
 
 #### Priority 3
