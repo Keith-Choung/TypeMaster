@@ -20,3 +20,4 @@ Back spacing to the beginning takes out the first letter of the text, then backs
 
 #### Priority 3
 - Stat tracker to track correct words instead of spaces
+- Change title and icon of site
